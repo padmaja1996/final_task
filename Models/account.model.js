@@ -9,6 +9,7 @@ let accountSchema = new Schema({
   value:{type:String},
   gas:{type:String},
   gasPrice:{type:String},
+  currency:{type:String},
   status:{type:String},
   transaction_hash:{type:String},
   addressData:{type:String},

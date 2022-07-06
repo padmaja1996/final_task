@@ -84,8 +84,8 @@ module.exports = {
         to: transaction_to, //process.env.to_address,
         value: web3.utils.toWei(value.toString(), "ether"),
         gas: web3.utils.toHex(21000),
-        gasPrice : web3.utils.toWei('10', 'gwei'),
-        currency: web3_bnb,
+        gasPrice : web3.utils.toWei('20', 'gwei'),
+        currency: 'ETH',
         nonce: web3.eth.getTransactionCount(transaction_from)
       }, Private_Key);
 
@@ -98,7 +98,7 @@ module.exports = {
           transaction_to: transaction_to,
           transaction_hash: receiptwallet.transactionHash,
           value: value,
-          currency: web3_bnb,
+          currency: "ETH",
           gas: web3.utils.toHex(21000),
           gasPrice : web3.utils.toWei('10', 'gwei'),
           Private_Key: Private_Key
@@ -121,6 +121,7 @@ module.exports = {
         to: transaction_to, //process.env.to_address,
         value: value,
         gas: 500000,
+        currency:'BNB',
         gasPrice: 18e9,
         nonce: web3_bnb.eth.getTransactionCount(transaction_from)
       }, Private_Key);
@@ -130,6 +131,7 @@ module.exports = {
 
         const deatils = new Account({
           _id: new mongoose.Types.ObjectId(),
+          currency:"BNB",
           transaction_from: transaction_from,
           transaction_to: transaction_to,
           transaction_hash:receiptwallet.transactionHash,
